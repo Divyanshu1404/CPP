@@ -1,4 +1,5 @@
-#include<stdio.h>
+#include<iostream>
 void main(){
-    printf("jai shree ram");
+    cout<<"jai shree ram";
 }
+
