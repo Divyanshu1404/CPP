@@ -4,11 +4,11 @@ using namespace std;
     char ch;
     cout<<"enter the charter :";
     cin>>ch;
-
-    if(ch>='a' && ch<='z'){
-        cout<<"lower case";
+//if(ch>='A' && ch<='B')
+    if(ch>=65 && ch<=90){ /// ascii value A - Z lies between 65 to 90
+        cout<<"upper case\n";
     }
     else {
-        cout<<"upper case";
+        cout<<"lower case\n";
     }
  }
