@@ -1,0 +1,20 @@
+ibmcloud login
+
+ibmcloud login --sso
+
+ibmcloud target -g Default
+ibmcloud target -r us-south  ////select region
+
+ibmcloud cf push <app-name>
+
+ibmcloud cf push truvallo-app ///example
+
+docker build -t truvallo-app .
+
+
+ibmcloud cr login
+
+
+docker tag truvallo-app us.icr.io/<namespace>/truvallo-app:1.0
+
+docker push us.icr.io/<namespace>/truvallo-app:1.0
