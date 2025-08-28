@@ -9,6 +9,8 @@ using namespace std;
         for(int j=0;j<i;j++){
             cout<<" ";
         }
+        // for(int j=0;j<n-i;j++){
+        //     cout<<(i+1);
         for(int j=0;j<n-i;j++){
             cout<<(i+1)<<" ";
         }
