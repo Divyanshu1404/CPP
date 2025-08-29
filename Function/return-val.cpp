@@ -7,7 +7,9 @@ int printhello(){
 }
 int main()
 {
-    int val=printhello();
-    cout<<"val ; "<<val<<endl;
+    // int val=printhello();
+    // cout<<"val ; "<<val<<endl;
+    
+    cout<<printhello()<<endl;
     return 0;
 }
