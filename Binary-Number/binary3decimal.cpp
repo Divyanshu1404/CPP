@@ -6,7 +6,7 @@ int binary2decimal(int binary){
     int pow=1;
     while(binary>0){
         int rem=binary%10;
-        ans=ans+(binary * pow);
+        ans=ans+(rem * pow);
         binary=binary/10;
         pow=pow*2;
     }
