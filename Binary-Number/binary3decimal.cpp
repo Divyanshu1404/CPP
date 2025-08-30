@@ -13,6 +13,6 @@ int binary2decimal(int binary){
 }
 int main()
 {
-    
+    cout<<binary2decimal(101)<<endl;   
     return 0;
 }
