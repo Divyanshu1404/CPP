@@ -13,7 +13,7 @@ int main()
     int marks[size];
     
     for (int i=0; i<size;i++){
-        cin>>marks[i];
+        cin>>marks[i];jf b
     }
     for(int i= 0 ; i<size ; i++){
         cout<<marks[i];
