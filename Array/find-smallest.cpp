@@ -13,14 +13,14 @@ int main()
     int marks[size];
     
     for (int i=0; i<size;i++){
-        cin>>marks[i];jf b
+        cin>>marks[i];
     }
     for(int i= 0 ; i<size ; i++){
         cout<<marks[i];
     }
     int smallest=INT_MAX;
     for(int i=0;i<size;i++){
-        if(marks[i]<smallest){
+        if(marks[i]<smallest){k
             smallest=marks[i];
         }
     }
