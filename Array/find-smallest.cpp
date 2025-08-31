@@ -20,14 +20,10 @@ int main()
     }
     int smallest=INT_MAX;
     for(int i=0;i<size;i++){
-        if(marks[i]<smallest){k
+        if(marks[i]<smallest){
             smallest=marks[i];
         }
     }
     cout<<"Smallest : "<<smallest<<endl;
-
-
-
-
     return 0;
 }
