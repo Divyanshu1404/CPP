@@ -2,19 +2,15 @@
 #include <climits>
 using namespace std;
  
-// int findMin(int smallest){
-//     smallest=INT_MAX;
-//     for
-// }
 int main()
 {
     int size;
      cout<<"enter the size of array : ";
     cin>>size;
     int marks[size];    
-
-    for(int i= 0 ; i<size ; i++){
-        cout<<marks[i];
+    cout<<"enter the values of array : ";
+    for (int i=0; i<size;i++){
+        cin>>marks[i];
     }
     int smallest=INT_MAX;
     for(int i=0;i<size;i++){
