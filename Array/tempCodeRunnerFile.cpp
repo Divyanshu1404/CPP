@@ -1,4 +1,3 @@
-    //     swap(arr[start],arr[end]);
-    //     start++;
-    //     end--;
-    // }
+  // for (int i=st;i<=end;i++){
+            //     cout<<arr[i];
+            // }
