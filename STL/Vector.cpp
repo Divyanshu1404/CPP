@@ -19,6 +19,8 @@ int main()
     }
     cout<<endl;
     cout<<"size : "<<v.size()<<endl;
+    cout<<"Capacity : "<<v.capacity()<<endl;
+
    
     return 0;
 }
