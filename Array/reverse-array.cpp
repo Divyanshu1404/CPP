@@ -2,7 +2,11 @@
 using namespace std;
 
 int arrReverse(int arr[],int size){
-    
+    int start0;
+    int end=size-1;
+       for (int i=0; i<size;i++){
+       
+    }
 }
 
 int main()
