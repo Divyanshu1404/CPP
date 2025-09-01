@@ -12,11 +12,10 @@ int main()
 {
     int arr[]={2,5,8};
     changeArr(arr,3);
-
-
+    cout<<"in main\n";
      for(int i=0;i<3;i++){
-        arr[i]=2*arr[i];
-        cout<<arr[i];
+
+        cout<<arr[i]<<" ";
     }
     cout<<endl;
     
