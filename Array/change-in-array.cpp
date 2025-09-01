@@ -16,7 +16,7 @@ int main()
 
      for(int i=0;i<3;i++){
         arr[i]=2*arr[i];
-        cout<<"changed arr : "<<arr[i];
+        cout<<arr[i];
     }
     cout<<endl;
     
