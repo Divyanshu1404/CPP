@@ -17,7 +17,8 @@ int main()
     for(int x:v){
         cout<<x<<" ";
     }
-    cout<<v.size()<<endl;
+    cout<<endl;
+    cout<<"size : "<<v.size()<<endl;
    
     return 0;
 }
