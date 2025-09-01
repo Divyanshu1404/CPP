@@ -25,7 +25,7 @@ int main()
     int target;
     cin>>target;
 
-    cout<<linearSearch(arr,size,target)<endl;
+    cout<<"Index : "<<linearSearch(arr,size,target)<<endl;
 
     return 0;
 }
