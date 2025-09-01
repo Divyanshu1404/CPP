@@ -18,7 +18,9 @@ int main()
         cout<<x<<" ";
     }
     cout<<endl;
+    v.erase(v.begin()+2,v.begin()+1);
     cout<<"size : "<<v.size()<<endl;
+    cout<<"value at indec 2 : "<< v[2]<<" or "<<v.at(2)<<endl;
     cout<<"Capacity : "<<v.capacity()<<endl;
 
    
