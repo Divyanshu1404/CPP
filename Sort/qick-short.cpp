@@ -1,64 +1,36 @@
 #include<iostream>
+#include<vector>
 using namespace std;
-int count=0;
 
-int partition(int arr[], int low, int high){
-    int pivot=arr[high];
-    int i=low-1;
-    count++;
-    
-    for(int j=low;j<high;j++){
-        if(arr[j]<=pivot){
-            i++;
-            count++;
-            
-            int temp=arr[i];
-            arr[i]=arr[j];
-            arr[j]=temp;
+int partition(vector<int>&arr, int st, int end){
+    int pivIdx=arr[end];
+    int idx=st - 1;
+    for (int j=st;j<end;j++){
+        if(arr[j] <= pivIdx){
+            idx++;
+            swap(arr[j],arr[idx]);
         }
     }
-    
-    count++;
-    int temp=arr[i+1];
-    arr[i+1]=arr[high];
-    arr[high]=temp;
-    return(i+1);
+    idx++;
+    swap(arr[end],arr[idx]);
+    return idx;
 }
 
-void quicksort(int arr[], int low, int high){
-    count++;
-    
-    if(low<high){
-        
-        int pi=partition(arr,low,high);
-        quicksort(arr,low,pi-1);
-        quicksort(arr,pi+1,high);
-        count++;
+void QuickSort(vector<int>&arr ,int st,int end){
+    if(st < end){
+        int pivIdx = partition(arr ,st ,end);
+        QuickSort(arr,st,pivIdx-1);
+        QuickSort(arr,pivIdx+1,end);
     }
-    count++;
-    count++;
 }
 
-
-int main(){
-    
-    int n;
-    cin >> n;
-
-    int arr[n];
-    for (int i = 0; i < n; i++)
-    {
-    cin >> arr[i];
+ int main()
+ {
+    vector<int>arr ={2,1,3,4,5,6};
+    QuickSort(arr,0,arr.size()-1);
+    for (int val :arr){
+        cout<<val<<" "; 
     }
-
-    quicksort(arr, 0, n - 1);
-
-    
-    for (int i = 0; i < n; i++){
-    cout << arr[i] ;
-    }
-    cout << endl;
-    cout<<count;
-
+    cout<<endl;
     return 0;
 }
