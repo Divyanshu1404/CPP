@@ -1,36 +1,72 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-int partition(vector<int>&arr, int st, int end){
-    int pivIdx=arr[end];
-    int idx=st - 1;
-    for (int j=st;j<end;j++){
-        if(arr[j] <= pivIdx){
+/**
+ * @brief Partitions the subarray using the Lomuto partition scheme.
+ * 
+ * This function chooses the last element as the pivot, rearranges the subarray such that
+ * all elements less than or equal to the pivot come before it, and all elements greater
+ * than the pivot come after it. Finally, it places the pivot in its correct position.
+ * 
+ * @param arr Reference to the array to be partitioned
+ * @param st Starting index of the subarray
+ * @param end Ending index of the subarray (pivot element)
+ * @return int The index of the pivot element after partitioning
+ */
+int partition(vector<int>& arr, int st, int end) {
+    int pivot = arr[end];   // Pivot element (last element of subarray)
+    int idx = st - 1;       // Index of smaller element
+
+    for (int j = st; j < end; j++) {
+        // If current element is smaller than or equal to pivot, swap it
+        if (arr[j] <= pivot) {
             idx++;
-            swap(arr[j],arr[idx]);
+            swap(arr[j], arr[idx]);
         }
     }
+
     idx++;
-    swap(arr[end],arr[idx]);
+    swap(arr[end], arr[idx]);  // Place pivot in correct position
     return idx;
 }
 
-void QuickSort(vector<int>&arr ,int st,int end){
-    if(st < end){
-        int pivIdx = partition(arr ,st ,end);
-        QuickSort(arr,st,pivIdx-1);
-        QuickSort(arr,pivIdx+1,end);
+/**
+ * @brief Sorts an array using the QuickSort algorithm.
+ * 
+ * QuickSort is a divide-and-conquer algorithm. It works by selecting a pivot element
+ * from the array, partitioning the array around the pivot, and recursively sorting
+ * the subarrays on either side of the pivot.
+ * 
+ * @param arr Reference to the array to be sorted
+ * @param st Starting index of the subarray to be sorted
+ * @param end Ending index of the subarray to be sorted
+ */
+void QuickSort(vector<int>& arr, int st, int end) {
+    if (st < end) {
+        int pivIdx = partition(arr, st, end);  // Partition array and get pivot index
+        QuickSort(arr, st, pivIdx - 1);        // Recursively sort left subarray
+        QuickSort(arr, pivIdx + 1, end);       // Recursively sort right subarray
     }
 }
 
- int main()
- {
-    vector<int>arr ={2,1,3,4,5,6};
-    QuickSort(arr,0,arr.size()-1);
-    for (int val :arr){
-        cout<<val<<" "; 
+/**
+ * @brief Main function demonstrating QuickSort.
+ * 
+ * Initializes an array, sorts it using QuickSort, and prints the sorted array.
+ * 
+ * @return int Returns 0 on successful execution
+ */
+int main() {
+    vector<int> arr = {2, 1, 3, 4, 5, 6};
+
+    QuickSort(arr, 0, arr.size() - 1);  // Sort the array
+
+    cout << "Sorted array: ";
+    for (int val : arr) {
+        cout << val << " ";
     }
-    cout<<endl;
+    cout << endl;
+
     return 0;
 }
