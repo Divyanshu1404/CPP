@@ -25,7 +25,7 @@ int partition(vector<int>& arr, int st, int end) {
             swap(arr[j], arr[idx]);
         }
     }
-
+///incrementing i
     idx++;
     swap(arr[end], arr[idx]);  // Place pivot in correct position
     return idx;
