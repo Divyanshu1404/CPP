@@ -6,7 +6,7 @@ using namespace std;
 int findMax(int arr[], int n) {
     int largest = INT_MIN;
     for (int i = 0; i < n; i++) {
-        if (arr[i] > largest) {   // ✅ corrected condition
+        if (arr[i] > largest) {   // corrected condition
             largest = arr[i];
         }
     }
