@@ -8,7 +8,7 @@ int findMax(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         if (arr[i] > largest) {   // corrected condition
             largest = arr[i];
-        }
+        } 
     }
     return largest;
 }
@@ -18,8 +18,7 @@ int main() {
     cout << "Enter the size of array: ";
     cin >> size;
 
-    int marks[size];   // works in GCC/Clang, not standard C++, 
-                       // but many compilers allow VLAs
+    int marks[size];  
 
     cout << "Enter the values of array: ";
     for (int i = 0; i < size; i++) {
