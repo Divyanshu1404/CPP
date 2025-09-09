@@ -12,7 +12,7 @@ int findMax(int arr[], int n) {
     }
     return largest;
 }
-
+//vciybouigo
 int main() {
     int size;
     cout << "Enter the size of array: ";
