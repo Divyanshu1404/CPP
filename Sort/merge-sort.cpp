@@ -27,7 +27,7 @@ void merge(vector<int> &arr, int st, int mid, int end) {
     while (i <= mid && j <= end) {
         if (arr[i] <= arr[j]) {
             temp.push_back(arr[i]);
-            i++;
+            i++; 
         } else {
             temp.push_back(arr[j]);
             j++;
