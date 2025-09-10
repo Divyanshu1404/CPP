@@ -15,19 +15,20 @@ using namespace std;
  * @return int The index of the pivot element after partitioning
  */
 int partition(vector<int>& arr, int st, int end) {
-    int pivot = arr[end];   // Pivot element (last element of subarray)
-    int idx = st - 1;       // Index of smaller element
+    int pivot = arr[end]; 
+    int idx = st - 1;       
 
     for (int j = st; j < end; j++) {
-        // If current element is smaller than or equal to pivot, swap it
+       
         if (arr[j] <= pivot) {
             idx++;
             swap(arr[j], arr[idx]);
         }
     }
-///incrementing value of i
+/
     idx++;
-    swap(arr[end], arr[idx]);  // Place pivot in correct position
+    swap(arr[end], arr[idx]);  
+    
     return idx;
 }
 
