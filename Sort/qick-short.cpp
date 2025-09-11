@@ -25,7 +25,7 @@ int partition(vector<int>& arr, int st, int end) {
             swap(arr[j], arr[idx]);
         }
     }
-/
+
     idx++;
     swap(arr[end], arr[idx]);  
     
