@@ -5,3 +5,6 @@ git commit -m "Message"
 git push -u origin main
 
 
+git config --global user.email "mishraaman4512@.com"
+
+ git config --global user.name "DIVYANSHU MISHRA"
