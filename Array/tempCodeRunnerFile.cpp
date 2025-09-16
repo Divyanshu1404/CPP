@@ -1,33 +1,17 @@
-#include <iostream>
-#include <climits>
-using namespace std;
-
-// Function to find smallest element in array
-int findMin(int arr[], int n) {
-    int smallest = INT_MAX;
-    for (int i = 0; i < n; i++) {
-        if (arr[i] < smallest) {
-            smallest = arr[i];
-        }
-    }
-    return smallest;
-}
+#include <stdio.h>
 
 int main() {
-    int size;
-    cout << "Enter the size of array: ";
-    cin >> size;
 
-    int marks[size];   // works in GCC/Clang (Variable Length Array), 
-                       // not standard C++ but supported by many compilers
+    int a = 5, b = 2;
 
-    cout << "Enter the values of array: ";
-    for (int i = 0; i < size; i++) {
-        cin >> marks[i];
-    }
+    if (a & b || a ^ b && ~b)
 
-    int smallest = findMin(marks, size);
+        printf("True");
 
-    cout << "Smallest: " << smallest << endl;
+    else
+
+        printf("False");
+
     return 0;
+
 }
