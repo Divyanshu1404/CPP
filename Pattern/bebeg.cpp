@@ -36,27 +36,3 @@ int main() {
 
 
 // /// python code for the same pattern
-
-// n = 3
-// width = 2 * n + 1
-
-// # Top 3 rows
-// for row in range(3):
-//     if row == 0:  # First row
-//         print("* " * n + "  " * n + "* " * n)
-//     elif row == 1:  # Second row
-//         print("  " * (n - 1) + "* " + "  " * n + "* ")
-//     else:  # Third row
-//         print("  " * (n - 1) + "* " * (2 * n - 1))
-
-// # Rows with @
-// for i in range(n):
-//     for j in range(2 * n + 1):
-//         if j == n + 1:
-//             print("@ ", end="")
-//         else:
-//             print("  ", end="")
-//     print()
-
-
-
