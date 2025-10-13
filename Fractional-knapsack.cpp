@@ -1,37 +1,42 @@
-#include <iostream>
-#include <algorithm>
+#include <iostream>   
+#include <vector>     
+#include <algorithm>   
+#include <cmath>       
+#include <iomanip>
 using namespace std;
 struct Item {
-    int weight, profit;
-    double ratio;
+    double value, weight;
 };
-bool cmp(Item a, Item b) {
-    return a.ratio > b.ratio;
+bool cmp(const Item &a, const Item &b) {
+    return (a.value / a.weight) > (b.value / b.weight);
 }
-int main() {
-    int n;
-    float capacity;
-    cout << "Enter number of items: ";
-    cin >> n;
-    cout << "Enter capacity of knapsack: ";
-    cin >> capacity;
-    Item arr[n];
-    for(int i = 0; i < n; i++) {
-        cout << "Enter profit and weight for item " << i + 1 << ": ";
-        cin >> arr[i].profit >> arr[i].weight;
-        arr[i].ratio = (double)arr[i].profit / arr[i].weight;
+double fractionalKnapsack(int capacity, vector<int> &val, vector<int> &wt) {
+    int n = val.size();
+    vector<Item> items(n);
+    for (int i = 0; i < n; i++) {
+        items[i].value = val[i];
+        items[i].weight = wt[i];
     }
-    sort(arr, arr + n, cmp);
-    float totalProfit = 0.0, remaining = capacity;
-    for(int i = 0; i < n; i++) {
-        if(arr[i].weight <= remaining) {
-            totalProfit += arr[i].profit;
-            remaining -= arr[i].weight;
+    sort(items.begin(), items.end(), cmp);
+    double totalValue = 0.0;
+    for (const auto &item : items) {
+        if (capacity <= 0) break;
+        if (item.weight <= capacity) {
+            totalValue += item.value;
+            capacity -= item.weight;
         } else {
-            totalProfit += arr[i].ratio * remaining;
-            break;
+            totalValue += (item.value / item.weight) * capacity;
+            capacity = 0;
         }
     }
-    cout << "\nMaximum Profit = " << totalProfit << endl;
+    return round(totalValue * 1000000.0) / 1000000.0;
+}
+int main() {
+    vector<int> val = {60, 100, 120};
+    vector<int> wt = {10, 20, 30};
+    int capacity = 50;
+    double result = fractionalKnapsack(capacity, val, wt);
+    cout << fixed << setprecision(6);
+    cout << result << endl;
     return 0;
 }

@@ -1,29 +1,40 @@
-#include<iostream>
-#include<vector>
+#include <bits/stdc++.h>
 using namespace std;
 
-int knapsackRec(int W, vector<int>&wt,vector<int>&val, int n){
-    if(n==0||W==0){
-        return 0;
-    }
-   int pick = 0;
+struct Item {
+    double value, weight;
+};
 
-    if (wt[n - 1] <= W)
-        pick = val[n - 1] + knapsackRec(W - wt[n - 1], val, wt, n - 1);
-    
-    int notPick = knapsackRec(W, val, wt, n - 1);
-     
-    return max(pick, notPick);
-   
+bool cmp(const Item &a, const Item &b) {
+    return (a.value / a.weight) > (b.value / b.weight);
 }
-int knapsack(int W, vector<int> &val, vector<int> &wt) {
+double fractionalKnapsack(int capacity, vector<int> &val, vector<int> &wt) {
     int n = val.size();
-    return knapsackRec(W, val, wt, n);
+    vector<Item> items(n);
+    for (int i = 0; i < n; i++) {
+        items[i].value = val[i];
+        items[i].weight = wt[i];
+    }
+    sort(items.begin(), items.end(), cmp);
+    double totalValue = 0.0;
+    for (const auto &item : items) {
+        if (capacity <= 0) break;
+        if (item.weight <= capacity) {
+            totalValue += item.value;
+            capacity -= item.weight;
+        } else {
+            totalValue += (item.value / item.weight) * capacity;
+            capacity = 0;
+        }
+    }
+    return round(totalValue * 1000000.0) / 1000000.0;
 }
 int main() {
-    vector<int> val = {1, 2, 3};
-    vector<int> wt = {4, 5, 1};
-    int W = 4;
-    cout<<knapsack(W, val, wt) << endl;
+    vector<int> val = {60, 100, 120};
+    vector<int> wt = {10, 20, 30};
+    int capacity = 50;
+    double result = fractionalKnapsack(capacity, val, wt);
+    cout << fixed << setprecision(6);
+    cout << result << endl;
     return 0;
 }
