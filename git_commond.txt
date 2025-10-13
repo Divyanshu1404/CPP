@@ -1,6 +1,7 @@
 git init
-git remote add origin https://github.com/Divyanshu1404/CPP.git
+
 git add .
+git remote add origin https://github.com/Divyanshu1404/CPP.git
 git commit -m "Message"
 git push -u origin main
 
