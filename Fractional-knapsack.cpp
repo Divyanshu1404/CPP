@@ -1,7 +1,8 @@
-#include <iostream>   
-#include <vector>     
-#include <algorithm>   
-#include <cmath>       
+#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
 #include <iomanip>
 using namespace std;
 struct Item {
@@ -32,11 +33,15 @@ double fractionalKnapsack(int capacity, vector<int> &val, vector<int> &wt) {
     return round(totalValue * 1000000.0) / 1000000.0;
 }
 int main() {
-    vector<int> val = {60, 100, 120};
-    vector<int> wt = {10, 20, 30};
-    int capacity = 50;
+    int n, capacity;
+    cin >> n;
+    vector<int> val(n), wt(n);
+    for (int i = 0; i < n; i++)
+        cin >> val[i];
+    for (int i = 0; i < n; i++)
+        cin >> wt[i];
+    cin >> capacity;
     double result = fractionalKnapsack(capacity, val, wt);
-    cout << fixed << setprecision(6);
-    cout << result << endl;
+    cout << fixed << setprecision(6) << result << endl;
     return 0;
 }
