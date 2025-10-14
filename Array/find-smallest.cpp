@@ -1,27 +1,41 @@
 #include<iostream>
 #include <climits>
+
+// Program to find the smallest element in an array and its index
+// Uses a simple linear search to find the minimum value
+
 using namespace std;
- 
+
 int main()
 {
-    int size;
-     cout<<"enter the size of array : ";
-    cin>>size;
-    int marks[size];    
-    cout<<"enter the values of array : ";
-    for (int i=0; i<size;i++){
-        cin>>marks[i];
+    int size; // Size of the array
+
+    // Input: size of the array
+    cout << "enter the size of array : ";
+    cin >> size;
+
+    int marks[size]; // Array to store values
+
+    // Input: values of the array
+    cout << "enter the values of array : ";
+    for (int i = 0; i < size; i++) {
+        cin >> marks[i];
     }
-    int smallest=INT_MAX;
-    int index=-1;
-    for(int i=0;i<size;i++){
-        if(marks[i]<smallest){
-            smallest=marks[i];
-            index=i;
+
+    int smallest = INT_MAX; // Initialize smallest to maximum possible int
+    int index = -1;         // Index of the smallest element
+
+    // Find the smallest element and its index
+    for (int i = 0; i < size; i++) {
+        if (marks[i] < smallest) {
+            smallest = marks[i];
+            index = i;
         }
     }
-    cout<<"Smallest : "<<smallest<<endl;
-    cout<<"index : "<<index<<endl;
+
+    // Output the smallest value and its index
+    cout << "Smallest : " << smallest << endl;
+    cout << "index : " << index << endl;
     return 0;
 }
 
