@@ -33,8 +33,7 @@ int main() {
         }
     }
 
-   /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
-    
-    cout<<dp[n][m];
+    // Print the edit distance (no extra spaces/newlines)
+    cout << dp[n][m];
     return 0;
 }
