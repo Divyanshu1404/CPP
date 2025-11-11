@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main() {
@@ -21,15 +25,16 @@ int main() {
             if (A[i - 1] == B[j - 1]) {
                 dp[i][j] = dp[i - 1][j - 1];
             } else {
-                dp[i][j] = 1 + min({
-                    dp[i - 1][j],     
-                    dp[i][j - 1],     
-                    dp[i - 1][j - 1]  
-                });
+                int insertOp = dp[i][j - 1];
+                int deleteOp = dp[i - 1][j];
+                int replaceOp = dp[i - 1][j - 1];
+                dp[i][j] = 1 + min(insertOp, min(deleteOp, replaceOp));
             }
         }
     }
 
-    cout << dp[n][m];
+   /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    
+    cout<<dp[n][m];
     return 0;
 }
