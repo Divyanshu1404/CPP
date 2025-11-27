@@ -1,0 +1,9 @@
+Recursion — concise definition and examples
+
+Definition: Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem. Each recursive call should reduce the problem size and must include a base case that stops further recursion.
+
+Key parts:
+
+Base case: a simple condition that returns a result without a recursive call (prevents infinite recursion).
+Recursive case: the part where the function calls itself on a smaller/simpler input.
+Termination: every recursive path must eventually reach a base case.
