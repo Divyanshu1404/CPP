@@ -37,7 +37,7 @@ int main() {
             cout<<endl;
         }
          for (int i=0;i<=n/2;i++){
-            for (int j=0;j<i+n/2;j++){
+            for (int j=0;j<i+n;j++){
                 cout<<" ";
         }
          for(int j=n-(2*i);j>0;j--){
