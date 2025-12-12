@@ -8,7 +8,7 @@ int main(){
 /// First Part.
         for (int i=0;i<n/2+1;i++){
             for (int j=0;j<2*n+1-i;j++){
-                cout<<"-";
+                cout<<" ";
             }
             for (int j=0;j<2*i+1;j++){
                 cout<<"*";
@@ -18,7 +18,7 @@ int main(){
     // Second Part.
         for (int i=0;i<n-1;i++){
             for (int j=0;j<2*n+1;j++){
-                cout<<"-";
+                cout<<" ";
             }
             for (int j=0;j<1;j++){
                 cout<<"*";
@@ -28,11 +28,11 @@ int main(){
         //Third Part
         for (int i=0;i<n/2;i++){
             for (int j=0;j<n+2;j++){
-                cout<<"-";
+                cout<<" ";
             }
             for (int j=0;j<n;j++){
                 if(i==0||j==0){
-                cout<<"+";
+                cout<<"*";
             }
             else{
                 cout<<" ";
@@ -50,23 +50,18 @@ int main(){
                 cout<<" ";
             }
             }
-            // for (int j=0;j<;j++){
-            //     cout<<"*";
-            // }
+            for (int j=0;j<n/2+2;j++){
+                if(i==n/2){
+                    cout<<"*";
+                }
+                else
+                 cout<<" ";
+            }
+            for (int j=0;j<1;j++){
+                if(i<n-1){
+                cout<<"*";
+                }
+            }
             cout<<endl;
             }
-        // // for (int i=0;i<n/2;i++){
-        //     for (int j=0;j<n-2;j++){
-        //         cout<<"-";
-        //     }
-        //     for (int j=0;j<n;j++){
-        //         if(i==0||j==0){
-        //         cout<<"*";
-        //     }
-        //     else{
-        //         cout<<" ";
-        //     }
-        //     }
-        //     cout<<endl;
-        // }
 }
