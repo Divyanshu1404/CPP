@@ -37,16 +37,16 @@ int main(){
           cout<<endl;
         }
     }
-    //  for (int i=0;i<5;i++){
-    //         for (int j=0;j<2*n+1;j++){
-    //             if(j==(n/2)-1||j==2*n-(n/2+1)||i==0 && j>=n/2&&j<2*n-n/2){
-    //                 cout<<"*";
+     for (int i=0;i<5;i++){
+            for (int j=0;j<2*n+1;j++){
+                if(j==(n/2)-1||j==2*n-(n/2+1)||i==0 && j>=n/2&&j<2*n-n/2){
+                    cout<<"*";
 
-    //             }
-    //             else{
-    //                 cout<<" ";
-    //             }
-    //         }
-    //         cout<<endl;
-    //     }
+                }
+                else{
+                    cout<<" ";
+                }
+            }
+            cout<<endl;
+        }
 } 
