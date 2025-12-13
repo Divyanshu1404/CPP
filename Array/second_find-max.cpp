@@ -5,10 +5,15 @@ using namespace std;
 // Function to find largest element in array
 int findMax(int arr[], int n) {
     int largest = INT_MIN;
+    int sec=INT_MIN;
     for (int i = 0; i < n; i++) {
-        if (arr[i] > largest) {   // corrected condition
+        if (arr[i] > largest) {
+            sec=largest;
+               // corrected condition
             largest = arr[i];
-        } 
+        } else if(arr[i]>sec&&arr[i]!=largest){
+            sec=arr[i];
+        }
     }
     return largest;
 }
