@@ -5,11 +5,16 @@ int main()
     int n;
     cout<<"Enter the number : ";
     cin>>n;
-    int num =1;
     for(int i=0;i<n;i++){
         for(int j=i+1;j>0;j--){
-            cout<<num;
-            num++;
+            cout<<"*";
+            
+        }
+        cout<<"\n";
+    }
+    for (int i=n;i>0;i--){
+        for(int j=i-1;j>0;j--){
+            cout<<"*";
         }
         cout<<"\n";
     }

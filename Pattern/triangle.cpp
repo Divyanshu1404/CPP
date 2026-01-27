@@ -9,17 +9,30 @@ int main()
         for(int j=0;j<n-i-1;j++){
             cout<<" ";
         }
-        for(int j=0;j<2*i+1;j++){
+        for(int j=0;j<i;j++){
+            cout<<"*";
+        }
+        for(int j=0;j<2*(n-i-1)+1;j++){
+            cout<<" ";
+        }
+        for(int j=0;j<i;j++){
             cout<<"*";
         }
         cout<<"\n";
     }
+
     //  Reverse triangle
     for(int i=n-2;i>=0;i--){
         for(int j=0;j<n-i-1;j++){
             cout<<" ";
         }
-        for(int j=0;j<2*i+1;j++){
+        for(int j=0;j<i;j++){
+            cout<<"*";
+        }
+        for(int j=0;j<2*(n-i-1)+1;j++){
+            cout<<" ";
+        }
+        for(int j=0;j<i;j++){
             cout<<"*";
         }
         cout<<"\n";
