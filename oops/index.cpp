@@ -3,24 +3,28 @@
 using namespace std;
 
 class teacher{
-    //properties
 private:
-    double salary;
+    double salary;   // private
+
 public:
+teacher(){
+    cout<<"hey i am constructor"<<endl;
+}
     string name;
     string dept;
     string subject;
-    
-    
-    //methods
+
+    // Method
     void changedept(string newdept){
         dept = newdept;
     }
-    // setter 
+
+    // Setter
     void setSalary(double a){
         salary = a;
     }
-    //getter
+
+    // Getter
     double getSalary(){
         return salary;
     }
@@ -28,15 +32,20 @@ public:
 
 int main(){
     teacher t1;
-    t1.name="aman";
-    t1.dept="computer application";
-    t1.subject="oop";
-    t1.salary=50000;
-    cout<<t1.name<<endl;
-    cout<<t1.dept<<endl;
-    cout<<t1.subject<<endl;
-    cout<<t1.salary<<endl;
 
-    return 0;  
+    t1.name = "aman";
+    t1.dept = "computer application";
+    t1.subject = "oop";
+
+    // Set salary using setter
+    t1.setSalary(50000);
+
+    cout << t1.name << endl;
+    cout << t1.dept << endl;
+    cout << t1.subject << endl;
+
+    // Get salary using getter
+    cout << t1.getSalary() << endl;
+
+    return 0;
 }
- 
