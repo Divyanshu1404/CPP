@@ -9,6 +9,11 @@ private:
 public:
     char level;
 
+    hero(int health){
+        health = health;
+        // cout<<"constructor called :"<<endl;
+    }
+
     void print(){
         cout<<level<<endl;
     }
@@ -31,10 +36,10 @@ public:
 };
 
 int main(){
-
-
-
-    
+    cout<<"hi"<<endl;
+    // hero ramesh;
+    hero *h=new hero();
+    cout<<"hello"<<endl;
 //        hero a;
 //    a.sethealth(80);
 //    a.setlevel('B');
