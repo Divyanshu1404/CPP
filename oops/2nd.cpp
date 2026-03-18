@@ -42,6 +42,7 @@ public:
 };
 
 int main(){
+    
     hero ramesh(10);
     
 
